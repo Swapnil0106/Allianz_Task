@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-cdp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-cdp
+  template:
+    metadata:
+      labels:
+        app: nginx-cdp
+    spec:
+      containers:
+      - name: nginx-cdp
+        image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+        ports:
+        - containerPort: 80
