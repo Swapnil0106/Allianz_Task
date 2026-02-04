@@ -1,0 +1,7 @@
+image:
+  repository: your-dockerhub-username/nginx-cdp
+  tag: latest
+
+service:
+  type: ClusterIP
+  port: 80
